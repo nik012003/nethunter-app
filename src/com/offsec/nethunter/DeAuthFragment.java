@@ -104,7 +104,7 @@ import android.widget.AdapterView.OnItemClickListener;
             public void onClick(View v) {
 
                 /**TODO: create .sh that executes the commands and puts its output in a file and then read the file in the textview 20/02/17*/
-                new BootKali("cp /sdcard/nh_files/deauth/scan.sh /root/scan.sh & chmod +x /root/scan.sh").run_bg();
+                new BootKali("cp /sdcard/nh_files/deauth/scan.sh /root/scan.sh && chmod +x /root/scan.sh").run_bg();
                 String cmd = "./root/scan.sh " + wlan.getText() + " | tr -s [:space:] > /sdcard/nh_files/deauth/output.txt";
                 try {
                     new BootKali("ifconfig " + wlan.getText() + " up").run_bg();
